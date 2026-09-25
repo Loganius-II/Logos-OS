@@ -1,3 +1,6 @@
+![Screenshot](./docs/images/screenshot1.png)
+
+
 # Logos OS
 16 bit DOS project from scratch. This project is a simple operating system that can boot from a floppy disk or USB drive. It is written in assembly language and C++. The goal of this project is to learn how to write an operating system from scratch and to understand how the computer works at a fundamental level. The project is still in development and is not yet complete.
 
