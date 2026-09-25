@@ -1,0 +1,14 @@
+ASM = nasm
+SRC_DIR = src
+BUILD_DIR = build
+
+# The default target that runs when you just type 'make'
+all: $(BUILD_DIR)/main_floppy.img
+
+$(BUILD_DIR)/main_floppy.img: $(BUILD_DIR)/main.bin
+	powershell -Command "Copy-Item '$(BUILD_DIR)/main.bin' -Destination '$(BUILD_DIR)/main_floppy.img'"
+	powershell -Command "$$f = [System.IO.File]::OpenWrite('$(BUILD_DIR)/main_floppy.img'); $$f.SetLength(1440KB); $$f.Close()"
+
+# FIXED: Changed '$(SRC_DIR)/' to '$(SRC_DIR)/main.asm'
+$(BUILD_DIR)/main.bin: $(SRC_DIR)/main.asm
+	$(ASM) $(SRC_DIR)/main.asm -f bin -o $(BUILD_DIR)/main.bin
