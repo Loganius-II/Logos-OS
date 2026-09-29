@@ -45,6 +45,11 @@
     - reading and writing to memory registers
     - different hex memory addresses
 - Assembly language
+- FAT12 file system and formatting
+- Writing a bootloader
+- Writing a kernel
+- Makefiles
+-
 
 
 ## How to use
